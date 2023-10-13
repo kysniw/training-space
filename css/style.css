@@ -8,10 +8,11 @@
 html {
   font-size: 66%;
   font-family: "Wix Madefor Display", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .menu {
@@ -19,24 +20,105 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 9rem;
+  height: 7rem;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: rgb(27, 26, 26);
+  background-color: rgba(27, 26, 26, 0.8);
   padding: 1rem 7%;
 }
 .menu__logo-div {
   cursor: pointer;
   height: 100%;
+  display: none;
 }
 .menu__logo {
   height: 100%;
 }
+.menu__logo:hover {
+  animation: floatingLogo 0.3s forwards;
+}
+.menu__links {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
 .menu__link {
   text-decoration: none;
+  position: relative;
   font-size: 2.3rem;
-  margin-left: 7rem;
+  width: 15rem;
+  text-align: center;
   color: white;
   font-weight: 600;
+  transition: 0.3s ease;
+}
+.menu__link:hover {
+  font-size: 2.5rem;
+  text-shadow: 0 0 3rem white;
+}
+
+section {
+  min-height: 100vh;
+  background-color: rgb(81, 77, 74);
+}
+
+.header {
+  height: 100vh;
+  background-image: url("/media/main.jpg");
+  background-position: 0 -30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header__content {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(27, 26, 26, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.header__text-div {
+  color: white;
+}
+.header__text-div h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+}
+.header__social-media {
+  display: flex;
+  justify-content: space-around;
+}
+.header .social-links {
+  color: white;
+  font-size: 4rem;
+  text-decoration: none;
+}
+
+@keyframes floatingLogo {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-0.1rem);
+  }
+  30% {
+    transform: translateX(0.1rem);
+  }
+  50% {
+    transform: translateX(-0.1rem);
+  }
+  70% {
+    transform: translateX(0.1rem);
+  }
+  90% {
+    transform: translateX(-0.1rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }/*# sourceMappingURL=style.css.map */
